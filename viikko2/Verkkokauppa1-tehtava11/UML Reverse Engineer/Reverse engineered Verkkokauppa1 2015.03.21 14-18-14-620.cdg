@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Reverse engineered Verkkokauppa1 2015.03.21 14-18-14-620">
+  <ClassDiagramComponents>
+    <Class xPosition="20.0" yPosition="20.0" package="ohtu" name="Main" visibility="public">
+      <Constructors/>
+      <Fields/>
+      <Methods>
+        <Method name="main" visibility="public" returnType="void" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="20.0" package="ohtu.verkkokauppa" name="Tuote" visibility="public">
+      <Constructors>
+        <Constructor name="Tuote" visibility="public">
+          <Argument type="int" name="id"/>
+          <Argument type="String" name="nimi"/>
+          <Argument type="int" name="hinta"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="id" visibility="private" type="int"/>
+        <Field name="nimi" visibility="private" type="String"/>
+        <Field name="hinta" visibility="private" type="int"/>
+      </Fields>
+      <Methods>
+        <Method name="equals" visibility="public" returnType="boolean">
+          <Argument type="Object" name="o"/>
+        </Method>
+        <Method name="getId" visibility="public" returnType="int"/>
+        <Method name="getHinta" visibility="public" returnType="int"/>
+        <Method name="toString" visibility="public" returnType="String"/>
+      </Methods>
+    </Class>
+    <Class xPosition="620.0" yPosition="20.0" package="ohtu.verkkokauppa" name="Kauppa" visibility="public">
+      <Constructors>
+        <Constructor name="Kauppa" visibility="public">
+          <Argument type="Varasto" name="varasto"/>
+          <Argument type="Pankki" name="pankki"/>
+          <Argument type="Viitegeneraattori" name="viitegeneraattori"/>
+        </Constructor>
+      </Constructors>
+      <Fields>
+        <Field name="varasto" visibility="private" type="Varasto"/>
+        <Field name="pankki" visibility="private" type="Pankki"/>
+        <Field name="ostoskori" visibility="private" type="Ostoskori"/>
+        <Field name="viitegeneraattori" visibility="private" type="Viitegeneraattori"/>
+        <Field name="kaupanTili" visibility="private" type="String"/>
+      </Fields>
+      <Methods>
+        <Method name="aloitaAsiointi" visibility="public" returnType="void"/>
+        <Method name="poistaKorista" visibility="public" returnType="void">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="lisaaKoriin" visibility="public" returnType="void">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="tilimaksu" visibility="public" returnType="boolean">
+          <Argument type="String" name="nimi"/>
+          <Argument type="String" name="tiliNumero"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface xPosition="920.0" yPosition="20.0" package="ohtu.verkkokauppa" name="Bank" visibility="public">
+      <Methods>
+        <Method name="tilisiirto" visibility="package" returnType="boolean">
+          <Argument type="String" name="nimi"/>
+          <Argument type="int" name="viitenumero"/>
+          <Argument type="String" name="tililta"/>
+          <Argument type="String" name="tilille"/>
+          <Argument type="int" name="summa"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="20.0" yPosition="420.0" package="ohtu.verkkokauppa" name="Pankki" visibility="public">
+      <Constructors>
+        <Constructor name="Pankki" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="kirjanpito" visibility="private" type="Kirjanpito"/>
+      </Fields>
+      <Methods>
+        <Method name="tilisiirto" visibility="public" returnType="boolean">
+          <Argument type="String" name="nimi"/>
+          <Argument type="int" name="viitenumero"/>
+          <Argument type="String" name="tililta"/>
+          <Argument type="String" name="tilille"/>
+          <Argument type="int" name="summa"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class xPosition="320.0" yPosition="420.0" package="ohtu.verkkokauppa" name="Ostoskori" visibility="public">
+      <Constructors>
+        <Constructor name="Ostoskori" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="tuotteet" visibility="package" type="ArrayList&lt;Tuote&gt;"/>
+      </Fields>
+      <Methods>
+        <Method name="lisaa" visibility="public" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="poista" visibility="public" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="hinta" visibility="public" returnType="int"/>
+      </Methods>
+    </Class>
+    <Interface xPosition="620.0" yPosition="420.0" package="ohtu.verkkokauppa" name="Stock" visibility="public">
+      <Methods>
+        <Method name="haeTuote" visibility="package" returnType="Tuote">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="otaVarastosta" visibility="package" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="palautaVarastoon" visibility="package" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="saldo" visibility="package" returnType="int">
+          <Argument type="int" name="id"/>
+        </Method>
+      </Methods>
+    </Interface>
+    <Class xPosition="920.0" yPosition="420.0" package="ohtu.verkkokauppa" name="Viitegeneraattori" visibility="public">
+      <Constructors>
+        <Constructor name="Viitegeneraattori" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="seuraava" visibility="private" type="int"/>
+      </Fields>
+      <Methods>
+        <Method name="uusi" visibility="public" returnType="int"/>
+      </Methods>
+    </Class>
+    <Class xPosition="20.0" yPosition="820.0" package="ohtu.verkkokauppa" name="Varasto" visibility="public">
+      <Constructors>
+        <Constructor name="Varasto" visibility="public"/>
+      </Constructors>
+      <Fields>
+        <Field name="kirjanpito" visibility="private" type="Kirjanpito"/>
+        <Field name="saldot" visibility="private" type="HashMap&lt;Tuote, Integer&gt;"/>
+      </Fields>
+      <Methods>
+        <Method name="haeTuote" visibility="public" returnType="Tuote">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="saldo" visibility="public" returnType="int">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="otaVarastosta" visibility="public" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="palautaVarastoon" visibility="public" returnType="void">
+          <Argument type="Tuote" name="t"/>
+        </Method>
+        <Method name="alustaTuotteet" visibility="private" returnType="void"/>
+      </Methods>
+    </Class>
+    <Interface xPosition="320.0" yPosition="820.0" package="ohtu.verkkokauppa" name="ReferenceGenerator" visibility="public">
+      <Methods>
+        <Method name="uusi" visibility="package" returnType="int"/>
+      </Methods>
+    </Interface>
+    <Class xPosition="620.0" yPosition="820.0" package="ohtu.verkkokauppa" name="Kirjanpito" visibility="public">
+      <Constructors>
+        <Constructor name="Kirjanpito" visibility="private"/>
+      </Constructors>
+      <Fields>
+        <Field name="instance" visibility="private" type="Kirjanpito" isStatic="true"/>
+        <Field name="tapahtumat" visibility="private" type="ArrayList&lt;String&gt;"/>
+      </Fields>
+      <Methods>
+        <Method name="getInstance" visibility="public" returnType="Kirjanpito" isStatic="true"/>
+        <Method name="lisaaTapahtuma" visibility="public" returnType="void">
+          <Argument type="String" name="tapahtuma"/>
+        </Method>
+        <Method name="getTapahtumat" visibility="public" returnType="ArrayList&lt;String&gt;"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="viitegeneraattori" source="Kauppa" target="Viitegeneraattori" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="tuotteet" source="Ostoskori" target="Tuote" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <HasRelation name="varasto" source="Kauppa" target="Varasto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Viitegeneraattori" target="ReferenceGenerator"/>
+    <HasRelation name="pankki" source="Kauppa" target="Pankki" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ostoskori" target="Tuote" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Varasto" target="Tuote" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Pankki" target="Bank"/>
+    <HasRelation name="instance" source="Kirjanpito" target="Kirjanpito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Stock" target="Tuote" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="saldot" source="Varasto" target="Tuote" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Varasto" target="Stock"/>
+    <HasRelation name="ostoskori" source="Kauppa" target="Ostoskori" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="kirjanpito" source="Pankki" target="Kirjanpito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Kirjanpito" target="Kirjanpito" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="kirjanpito" source="Varasto" target="Kirjanpito" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
