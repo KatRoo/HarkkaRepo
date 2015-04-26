@@ -141,7 +141,7 @@ public class Submission {
 
      @Override
     public String toString() {
-        String alku = "";
+    String alku = "";
         try {
             alku = "opiskelijanumero\t" + getStudent_number() + "\n\n"
                     + "viikko " + getWeek() + ": tehtyjä tehtäviä yhteensä: "
