@@ -1,0 +1,21 @@
+Ohjelmistotuotantomenetelmien kehittyminen 1950-luvulta nykypäivään
+Lauri Suomalainen
+Kandidaatintutkielma
+
+Referaatti
+
+Ohjelmointia ei katsottu ongelmaksi tietotekniikan alkuvuosina 1940 ja 1950-luvuilla kunnes kolmannen sukupolven tietokoneet tulivat 1960-luvulla. Silloin puhkesi niin sanottu ohjelmistokriisi. Tarvittiin koulutettuja alan ammattilaisia hoitamaan kasvavia ohjelmistoprojeksteja ja menetelmiä niiden hallintaan.
+
+Perinteisillä ohjelmistotuontomenetelmillä tarkoitetaan vesiputousmallisia menetelmiä, missä pääpaino on suunnittelulla. Vaiheet käydään läpi yksi kerrallaan. Järjestelmä- ja ohjelmistovaatimusten määrittely, analyysivaihe, ohjelmointi, testaus ja käyttöönotto sekä ylläpito. Vesiputousmallin ongelmia ovat suunnitelmavirheiden löytyminen ohjelmointi-ja testausvaiheessa eikä ohjelmointi voi enään jatkua suoraviivaisena. Myös käyttöönottovaiheessa ilmenee helposti vikoja. Jos ohjelmistovaatimukset voidaan määrittää tarkasti, kuten rautaa ohjelmoidessa, vesiputousmalli voi olla toimiva myös isommissa projekteissa.
+
+Inkrementaalisissa ja iteratiivisissa menetelmissä ohjelmistotuontoprojekti etenee sykleissä. Näitä menetelmiä ovat Extreme Programming, Rapid Application Development sekä Spiraalimalli ja Rational Unified Process. Spriraalimallissa kierrokset koostuvat tavoitteen määrittelystä, riskien arvioinnista ja minimoinnista, kehyksestä ja validoinnista sekä seuraavan vaiheen suunnittelusta.
+
+Spiraalimallin puitteissa voi käyttää lineaarisia, inkrementaalisia tai evolutiivisia työprosesseja, riippuen ohjelmiston tilasta. Hyviä puolia on keskittyminen riskien ehkäisyyn ja huonoina puolina on mallin huono määrittely.
+
+RUP on iteratiivinen menetelmä, minkä iteraatioissa on neljä vaihetta. Aloitus, tarkemtaminen, rakentaminen ja siirtyminen. RUP on määritelty hyvin ja käyttää apunaan esimerkiksi UML-kaavioita paljon. RUP:n etuja on työvaiheiden ja niiden työnkulun erottaminen sekä ohjelmiston käyttöönoton sisällyttäminen työvaiheisiin. Mutta RUP soveltuu huonosti laajoihin ohjelmistoprojekteihin.
+
+Ketterät menetelmät ovat vaatimus- ja suunnitelmapainotteisten menetelmien vastakohtia. Ketterän ohjelmistokehiksen julistuksessa sanotaankin, että arvostetaan yksilöllisyyttä enemmän kuin menetelmiä, toimivaa ohjelmistoa enemmän kuin dokumentaatiota, yhteistyötä enemmän kuin sopimusneuvotteluja ja vastataan muutokseen ennenmin kuin pitäydytään suunnitelmassa.
+
+Scrum on ketterä menetelmä, missä iteraatiot ovat yhestä kuuteenviikkoon kestäviä sprinttejä. Ennen sprinttiä kehittäjäryhmä ja asiakastaho eli product owner pitävät kokouksen, missä päätetään sprintissä toteutettavat asiat. Lopuksi pidetään myös katselmointi ja sprintin aikana kehitysryhmä pitää daily scrumin päivittäin. 
+
+Ketterien menetelmien etuna on nopeus ja ihmiskeskeisyys. Huonoja puolia on dokumentoinnin vähentyminen ja pitkissä projekteissa alkuvaiheessa tehdyt prototyyppisen ohjelmaratkaisut eivät skaalaudu välttämättä lopullisen ohjelmiston vaatimuksiin.
