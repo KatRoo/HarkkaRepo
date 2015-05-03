@@ -1,0 +1,62 @@
+Metriikat käytänteiden tukena ohjelmiston laadun arvioimisessa
+Kasper Hirvikoski
+Kandidaatintutkielma
+
+Referaatti
+
+Ohjelmiston laadullista arviointia voidaan tehdä erillaisten kriteerien kautta. Kriteerit on jaettu neljään osaan. Laatumalli luokittelee laadun joukkona piirteitä ja vaatimuksia, jonka mukaan organisaatio määrittelee laadulliset kriteerit ohjelmistoa varten. Ulkoiset metriikat mittaavat julkaisun jälkeistä virheiden määrää. Sisäisillä metriikoilla mitataan koodin monimutkaisuutta, riippuvuuksia ja muita vastaavia. Sisäinen laatu tutkii koodin laatua. Käyttölaadullisuus voidaan arvioida julkaisun jälkeen.
+
+Muutoksia koodissa tietyllä ajan jaksolla mittaamalla, voidaan havaita järjestelmän virhetiheyttä. Verkkoanalyysillä tutkitaan koodin riippuvuuksia ja tätä kautta löydetään virhealttiita osia. Testauksella on suuri osa laadun takaamisessa. Testikattavuuslajeja on useita. Luokka-, funktio-, metodi- ja käskykattavuuksista haara- ja polkukattavuuksiin. Voidaan olettaa, että suurempi testikattavuus löytää todennäkösesti enemmän virheitä. Myös kehittäjän käytänteillä on suuri merkitys, koska ohjelmoinnissa on aina mukana inhimillisiä tekijöitä.
+
+Perinteiset metriikat pohjautuivat koodirivien määrään. Olio-ohjelmoinnin suosion kasvaessa alettiin mitata metodien, yliluokkien ja lapsien lukumääriä. Ajatuksena on, että mitä enemmän luokalla on metodeja tai mitä enemmän luokalla on aliluokkia, sitä virhealttiimasta osasta on kyse.
+
+Koodikirnu mittaa ohjelmiston komponenttien koodiin kohdistuvia muutoksia tietyssä ajanjaksossa. Se koostuu suhteellisista mitoista, joilla arvioidaan virhetiheyttä. Mittoja on kahdeksan. Tässä muutama: Käsiteltyjen koodirivien määrä jaettuna koodirivien summalla vaikuttaa ohjelman virhetiheyteen. Poistettujen rivien määrä jaettuna kaikkien rivin summalla vaikuttaa myös koko ohjelman virhetiheyteen. Käsiteltyjen tiedostojan määrä jaettuna tiedostojen määrällä ilmaisee millä todennäköisyydellä nämä aiheuttavat uusia vikoja. Koodikirnussa mittausvirheet vaikuttavat luotettavaan arvioon. Ongelma ei kuitenkaan ole suuri, koska mittaus on automaattista.
+
+Verkkoanalyysissä tutkitaan koodin riippuvuuksia. Tietoriippuvuus on määrittelyiden ja arvojen välinen yhteys ja kutsuriippuvuus on funktio- ja metodimäärittelyn ja niitä kutsuvien paikkojen välinen yhteys. Mitä suurempi joukko verkossa olevia komponentteja riippuu toisistaan, sitä suurempi on virheherkkyys. Verkkomittoja on erillaisia. Egoverkot kuuvavat komponentteja sisä- ja ulkosolmuina. Egoverkoilla voidaan mitata kokoa, tiheyttä ja riippuvuuksien määrää. Globaaliverkot muodostuvat koko ohjelmiston riippuvuusverkoista. Rakenteellisia puutteita todetaan sulmujen suhteella. Jos kaikilla komponenteilla on keskinäinen suhde, on solmujen välillä tasopaino. Jos joku solmu riippuu toisen solmun välityksessä toisesta, on virheherkkyys suurempi. Solmujen keskeisyydellä on myös suuri vaikutus virhealttiuteen.
+
+Suurempaa testikattavuutta seuraa pienempi määrä julkaisun jälkeisiä virheilmoituksia. Optimaalinen testikattavuus ei kuitenkaan tunnu olevan lähellä 100%, eikä sen saavuttaminen ole välttämätöntä. Olennaisesti kriittisempiä osia pitää painottaa testauksessa unohtamatta siltikään pienimmissäkin osissa olevia komponentteja. Kattavuuden pätevyyteen vaikuttavat samat piirteet kuin koodikirnun ja verkkoanalyysin pätevyyteen. Testikattavuuden ongelma on, että se ei arvoi testien laatua.
+
+Testien laadun arvioimiseen voidaan käyttää mutaatiotestausta. Lähdekoodia sopivasti muuttamalla voidaan mutaatiotestauksella jäljittämään kaikki mahdolliset testitapaukset. Ideana on mitä suurempi määrä muutaatiokoodia löydetään, sitä kattavammat testit saadaan tehtyä. Mutaatiotestien ongelma on mutaatoiden valtava määrä. Niistä olisikin osattava valita keskeisimmät.
+
+Kehittäjän käytänteet vaikuttavat ohjelmiston laatuun merkittävästi. Ketterän kehityksen on todetty vähentävän kehitykseen kuluvaa aikaa. Laadun valvonta ei ole pelkästään yhden ihmisen tehtävänä. Asiakas on jatkuvasti kehityksen tukena. Ketterä kehitys ei kuitenkaan kerro yksiselitteisesti miten kehitys toteutetaan. Huonosti toteutettuna voi ketterä menetelmän viedä huomion ohjelmiston kokonaissuunnittelusta.
+
+Testilähtöisessä kehityksessä testit kirjoitetaan ensin ja näin pohditaan mahdollisia ongelmia ennen logiikan toteuttamista. Sisäinen laatu kasvaa merkittävästi. Pariohjelmoinnissa tehdään jatkuvaa suunnittelua ja koodikatselmointia kahden kehittäjän kesken. Tämä vähentää virheiden määrää ja parantaa ohjelmiston suunnittelua ja laatua. Pariohjelmoinnin on todettu kuitenkin vaativan enemmän vaivan näköä kehittäjiltä ja kasvattaa näin kustannuksia.
+
+Kehittäjät kohtaavat usein tiukkoja määräaikoja ja rajallisia henkilöresursseja laadun takaamiseen. Kriittiseksi osaksi muodostuu johtajien taito. Ketterässä kehityksessä vastuu ohjataan kehitysryhmälle. Se nopeuttaa virheiden löytymistä ja niihin puuttumista. Toimiva koodi on ketterän kehityksen tärkeimpiä tavoitteita. Moni XP:n käyntäntö yhdessä kuten suunnittelupeli, pariohjelmointi ja testilähtöinen kehitys parantavat laatua. Tutkimukset koodikirnusta, verkoanalyysistä ja testikattavuudesta metriikoina toivat esille inhimillisen tekijän laadun. Tutkimusten mukaan ketterä kehitys on oivallinen käytäntö laadun varmistamiseksi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
